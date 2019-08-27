@@ -11,7 +11,10 @@ class App extends React.Component {
   };
 
   numClick = num => {
-    if ((this.state.display === "0" && !this.state.hasOperator) || (this.state.operationComplete)) {
+    if (
+      (this.state.display === "0" && !this.state.hasOperator) ||
+      (this.state.operationComplete && !this.state.hasOperator)
+    ) {
       this.setState({
         display: num,
         hasOperator: false,
@@ -66,6 +69,7 @@ class App extends React.Component {
   };
 
   opClick = op => {
+    //If an operator was already selected, unhighlight this operator
     if (this.state.hasOperator) {
       switch (this.state.operator) {
         case "+":
@@ -82,6 +86,29 @@ class App extends React.Component {
           break;
       }
     }
+    //If a first number, an operator, and a second number have been entered, then a new operator should automatically trigger the first operation and use that result as the first number for the second operation
+    let firstNumber = this.state.display;
+    if (this.state.hasOperator && this.state.display !== "0") {
+      switch (this.state.operator) {
+        case "+":
+          firstNumber =
+            parseFloat(this.state.firstNum) + parseFloat(this.state.display);
+          break;
+        case "-":
+          firstNumber =
+            parseFloat(this.state.firstNum) - parseFloat(this.state.display);
+          break;
+        case "*":
+          firstNumber =
+            parseFloat(this.state.firstNum) * parseFloat(this.state.display);
+          break;
+        case "/":
+          firstNumber =
+            parseFloat(this.state.firstNum) / parseFloat(this.state.display);
+          break;
+      }
+    }
+    //Highlight the operator that was pressed most recently
     switch (op) {
       case "+":
         document.querySelector(".add").classList.add("operator-selected");
@@ -98,7 +125,7 @@ class App extends React.Component {
     }
 
     this.setState({
-      firstNum: this.state.display,
+      firstNum: firstNumber,
       operator: op,
       display: "0",
       hasOperator: true

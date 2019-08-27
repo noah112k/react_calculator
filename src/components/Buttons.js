@@ -118,13 +118,13 @@ export class Buttons extends Component {
 
 const numStyle = {
   color: "#000",
-  padding: "20px",
+  padding: "6vh",
   backgroundColor: "#ADEFD1",
   cursor: "pointer"
 };
 const opStyle = {
   color: "#fff",
-  padding: "20px",
+  padding: "6vh",
   backgroundColor: "#00203F",
   cursor: "pointer"
 };
