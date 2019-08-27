@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b64bb4ae76309de8c25138c98fcb925d",
+    "revision": "3862fb5c9dfe4252949b6d6bbc642720",
     "url": "/react_calculator/index.html"
   },
   {
-    "revision": "55401d273ae78d830c60",
-    "url": "/react_calculator/static/css/main.90eaefb0.chunk.css"
+    "revision": "cacd9540de03ab932598",
+    "url": "/react_calculator/static/css/main.03b7d867.chunk.css"
   },
   {
     "revision": "25b1f952f4ea419fabaf",
     "url": "/react_calculator/static/js/2.57b7e994.chunk.js"
   },
   {
-    "revision": "55401d273ae78d830c60",
+    "revision": "cacd9540de03ab932598",
     "url": "/react_calculator/static/js/main.44210620.chunk.js"
   },
   {
